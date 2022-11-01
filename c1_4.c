@@ -1,58 +1,56 @@
 #include <stdio.h>
-
 #include <string.h>
 
-Struct data_nilai
+struct data_nilai
 {
-    Char nim[10];
-    Char nama[20];
-    Double nilai;
+    char nim[10];
+    char nama[20];
+    double nilai;
 };
-Struct data_nilai data[10];
-Int j = 0;
-Void tambah_data()
+
+struct data_nilai data[10];
+int j = 0;
+
+void tambah_data()
 {
-    Char jawab[2];
-    While(1)
+    char jawab[2];
+
+    while (1)
     {
         fflush(stdin);
-        printf(“nim
-               : “);
-        scanf(“ % s”, &data[j], nim);
-        printf(“nama
-               : “);
-        scanf(“ % s”, &data[j].nama);
-        printf(“nilai ujian
-               : “);
-        scanf(“ % 1 f”, &data[j].nilai);
-        printf(“ada data lagi(y / t)
-               : “);
-        scanf(“ % s”, &jawab);
-        if ((strcmp(jawab, “y”) == 0) ||
-            (strcmp(jawab, “y”) == 0))
+        printf("nim : ");
+        scanf("%s", &data[j].nim);
+        printf("nama : ");
+        scanf("%s", &data[j].nama);
+        printf("nilai ujian : ");
+        scanf("%1f", &data[j].nilai);
+        printf("ada data lagi (y/t) : ");
+        scanf("%s", &jawab);
+        if (strcmp(jawab, "y") == 0)
         {
             j++;
             continue;
         }
-        else if ((strcmp(jawab, ”t”) == 0) ||
-                 (strcmp(jawab, “t”) == 0))
-            Break;
+        else if (strcmp(jawab, "t") == 0)
+        {
+            break;
+        }
     }
 }
-Void tampil()
+
+void tampil()
 {
-    Int i;
-    Printf(“data mahasiswa yang telah diinput
-           : \n”);
-    Printf(“nim\ tnama\ tnilai\ n”);
-    For(i = o; i <= j; i++)
+    int i;
+    printf("data mahasiswa yang telah diinput :\n");
+    printf("nim\tnama\tnilai\n");
+    for (i = 0; i <= j; i++)
     {
-        Printf(“5\ t % s | t % 6. sf\ n”, data[i].nim,
-               data[i].nama, data[i].nilai);
+        printf("%s\t%s\t%.2f\n", data[i].nim, data[i].nama, data[i].nilai);
     }
 }
-Void main()
+
+void main()
 {
-    Tambah_data();
-    Tampil();
+    tambah_data();
+    tampil();
 }
