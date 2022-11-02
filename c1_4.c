@@ -17,13 +17,13 @@ void tambah_data()
 
     while (1)
     {
-        fflush(stdin);
         printf("nim : ");
         scanf("%s", &data[j].nim);
         printf("nama : ");
         scanf("%s", &data[j].nama);
         printf("nilai ujian : ");
-        scanf("%1f", &data[j].nilai);
+        scanf("%lf", &data[j].nilai);
+        fflush(stdin);
         printf("ada data lagi (y/t) : ");
         scanf("%s", &jawab);
         if (strcmp(jawab, "y") == 0)
