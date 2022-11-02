@@ -3,8 +3,8 @@
 
 struct data_nilai
 {
-    char nim[10];
-    char nama[20];
+    char nim[11];
+    char nama[50];
     double nilai;
 };
 
@@ -18,14 +18,18 @@ void tambah_data()
     while (1)
     {
         printf("nim : ");
-        scanf("%s", &data[j].nim);
+        gets(data[j].nim);
+
         printf("nama : ");
-        scanf("%s", &data[j].nama);
+        gets(data[j].nama);
+
         printf("nilai ujian : ");
         scanf("%lf", &data[j].nilai);
+
         fflush(stdin);
         printf("ada data lagi (y/t) : ");
-        scanf("%s", &jawab);
+        gets(jawab);
+
         if (strcmp(jawab, "y") == 0)
         {
             j++;
